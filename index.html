@@ -414,31 +414,31 @@ summary(fit.reg) # 선형회귀모형 요약</code></pre>
 ## lm(formula = medv ~ ., data = Boston.train)
 ## 
 ## Residuals:
-##      Min       1Q   Median       3Q      Max 
-## -17.0194  -2.8728  -0.7831   1.6096  24.7744 
+##     Min      1Q  Median      3Q     Max 
+## -16.318  -2.888  -0.592   2.025  25.581 
 ## 
 ## Coefficients:
 ##               Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)  37.847336   6.312383   5.996 5.17e-09 ***
-## crim         -0.128322   0.043256  -2.967 0.003225 ** 
-## zn            0.045938   0.016956   2.709 0.007087 ** 
-## indus         0.015393   0.076411   0.201 0.840463    
-## chas          3.577546   1.131850   3.161 0.001715 ** 
-## nox         -17.574515   4.711582  -3.730 0.000224 ***
-## rm            3.592373   0.517332   6.944 1.94e-11 ***
-## age          -0.006268   0.016584  -0.378 0.705718    
-## dis          -1.678884   0.253350  -6.627 1.35e-10 ***
-## rad           0.409083   0.082454   4.961 1.11e-06 ***
-## tax          -0.017097   0.004722  -3.621 0.000339 ***
-## ptratio      -0.841102   0.162306  -5.182 3.77e-07 ***
-## b             0.011211   0.003110   3.605 0.000359 ***
-## lstat        -0.559526   0.061838  -9.048  &lt; 2e-16 ***
+## (Intercept)  37.373275   6.436467   5.806 1.46e-08 ***
+## crim         -0.030163   0.050200  -0.601  0.54833    
+## zn            0.030063   0.017283   1.739  0.08287 .  
+## indus         0.024723   0.079410   0.311  0.75574    
+## chas          2.417341   1.026858   2.354  0.01914 *  
+## nox         -20.409689   4.779503  -4.270 2.54e-05 ***
+## rm            4.061226   0.529145   7.675 1.77e-13 ***
+## age           0.010882   0.017006   0.640  0.52267    
+## dis          -1.366448   0.246486  -5.544 5.95e-08 ***
+## rad           0.280040   0.095937   2.919  0.00375 ** 
+## tax          -0.009688   0.005419  -1.788  0.07468 .  
+## ptratio      -1.076427   0.163307  -6.591 1.66e-10 ***
+## b             0.009488   0.003301   2.874  0.00430 ** 
+## lstat        -0.587308   0.064380  -9.123  &lt; 2e-16 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 4.84 on 340 degrees of freedom
-## Multiple R-squared:  0.744,  Adjusted R-squared:  0.7343 
-## F-statistic: 76.03 on 13 and 340 DF,  p-value: &lt; 2.2e-16</code></pre>
+## Residual standard error: 4.983 on 340 degrees of freedom
+## Multiple R-squared:  0.7434, Adjusted R-squared:  0.7336 
+## F-statistic: 75.77 on 13 and 340 DF,  p-value: &lt; 2.2e-16</code></pre>
 <ul>
 <li>단계적 선택법을 사용하여, 종속변수(부동산 가격)에 미치는 영향이 작은 설명변수를 제거하였음</li>
 </ul>
@@ -446,44 +446,44 @@ summary(fit.reg) # 선형회귀모형 요약</code></pre>
 summary(fit.step.reg) # 조정된 모델 요약</code></pre>
 <pre><code>## 
 ## Call:
-## lm(formula = medv ~ crim + zn + chas + nox + rm + dis + rad + 
-##     tax + ptratio + b + lstat, data = Boston.train)
+## lm(formula = medv ~ zn + chas + nox + rm + dis + rad + tax + 
+##     ptratio + b + lstat, data = Boston.train)
 ## 
 ## Residuals:
 ##      Min       1Q   Median       3Q      Max 
-## -16.9388  -2.8877  -0.6989   1.5119  24.5941 
+## -16.4503  -2.8690  -0.5654   2.0616  26.1496 
 ## 
 ## Coefficients:
 ##               Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)  37.834724   6.286052   6.019 4.53e-09 ***
-## crim         -0.128149   0.043104  -2.973 0.003158 ** 
-## zn            0.046190   0.016606   2.782 0.005709 ** 
-## chas          3.602953   1.116338   3.227 0.001370 ** 
-## nox         -17.763311   4.439187  -4.001 7.72e-05 ***
-## rm            3.548513   0.506012   7.013 1.26e-11 ***
-## dis          -1.651836   0.231639  -7.131 5.97e-12 ***
-## rad           0.407282   0.078563   5.184 3.72e-07 ***
-## tax          -0.016761   0.004147  -4.042 6.55e-05 ***
-## ptratio      -0.840183   0.160822  -5.224 3.05e-07 ***
-## b             0.011122   0.003094   3.595 0.000373 ***
-## lstat        -0.565789   0.057963  -9.761  &lt; 2e-16 ***
+## (Intercept)  36.412794   6.306662   5.774 1.74e-08 ***
+## zn            0.026730   0.016839   1.587  0.11336    
+## chas          2.516084   1.014877   2.479  0.01365 *  
+## nox         -19.046764   4.449438  -4.281 2.42e-05 ***
+## rm            4.154434   0.505977   8.211 4.52e-15 ***
+## dis          -1.410315   0.225908  -6.243 1.27e-09 ***
+## rad           0.251445   0.089316   2.815  0.00516 ** 
+## tax          -0.008667   0.004978  -1.741  0.08258 .  
+## ptratio      -1.063518   0.161938  -6.567 1.90e-10 ***
+## b             0.010082   0.003160   3.190  0.00155 ** 
+## lstat        -0.575910   0.059433  -9.690  &lt; 2e-16 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 4.827 on 342 degrees of freedom
-## Multiple R-squared:  0.7439, Adjusted R-squared:  0.7357 
-## F-statistic: 90.31 on 11 and 342 DF,  p-value: &lt; 2.2e-16</code></pre>
+## Residual standard error: 4.968 on 343 degrees of freedom
+## Multiple R-squared:  0.7427, Adjusted R-squared:  0.7352 
+## F-statistic: 99.03 on 10 and 343 DF,  p-value: &lt; 2.2e-16</code></pre>
 <pre class="r"><code>fit.step.reg$anova # 제거된 변수 보기</code></pre>
-<pre><code>##      Step Df  Deviance Resid. Df Resid. Dev      AIC
-## 1         NA        NA       340   7965.459 1130.205
-## 2 - indus  1 0.9507983       341   7966.409 1128.247
-## 3   - age  1 3.4631519       342   7969.872 1126.401</code></pre>
+<pre><code>##      Step Df Deviance Resid. Df Resid. Dev      AIC
+## 1         NA       NA       340   8443.352 1150.831
+## 2 - indus  1 2.407022       341   8445.759 1148.931
+## 3  - crim  1 9.410406       342   8455.169 1147.326
+## 4   - age  1 9.924233       343   8465.093 1145.741</code></pre>
 <ul>
 <li>따라서 예측모형의 평균제곱오차(MSE)는 다음과 같이 약 31.51임</li>
 </ul>
 <pre class="r"><code>yhat.reg &lt;- predict(fit.step.reg, newdata = Boston.test, type = &#39;response&#39;) # 데이터 예측, 목표값 예측시 type = &#39;response&#39;
 mean((Boston.test$medv-yhat.reg)^2) # 예측모형의 평균 제곱 오차 mse</code></pre>
-<pre><code>## [1] 21.76707</code></pre>
+<pre><code>## [1] 19.70153</code></pre>
 </div>
 <div id="회귀나무모형" class="section level2">
 <h2>2) 회귀나무모형</h2>
